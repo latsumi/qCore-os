@@ -25,6 +25,10 @@
 # Kernel Build Results
 obj/
 bin/
+build/
 
 # vscode
 .vscode/
+
+# extra
+!fw_jump.elf

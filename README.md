@@ -10,12 +10,9 @@
 
 ## 项目当前状态
 
-裸机环境，使用如下指令编译链接：
-```
-riscv -march=rv64g -mabi=lp64 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -T ./tools/kernel.ld -Isifive_u ./kernel/entry.S -o qCore
-```
+完成了最小化运行内核，包括设置内存布局和初始化完成后跳转到main入口，然后调用 `openSBI` 的 `SBI_CONSOLE_PUTCHAR` 接口在屏幕上输出字符串，步骤如下：
 
-然后使用QEMU运行生成的可执行文件：
-```
-qemu-system-riscv64 -nographic -machine sifive_u -bios none -kernel qCore
-```
+* 首先运行 `build.sh` 进行编译链接
+
+* 然后运行 `run.sh` 在QEMU中运行生成的 `hello.elf`
+

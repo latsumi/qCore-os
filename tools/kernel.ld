@@ -7,17 +7,28 @@ ENTRY( _start ) /*表示函数入口是_start*/
 SECTIONS
 {
   /* text: test code section */
-  . = 0x80000000;   /*起始地址开始处*/
-  .text : { *(.text) }
-  /* data: Initialized data segment */
-  .gnu_build_id : { *(.note.gnu.build-id) }
-  .data : { *(.data) }
-  .rodata : { *(.rodata) }
-  .sdata : { *(.sdata) }
-  .debug : { *(.debug) }
-  . += 0x8000;
-  stack_top = .;
+  . = 0x80200000;
+  start = .;
 
-  /* End of uninitalized data segement */
-  _end = .;
+  .text : {
+     stext = .;
+        *(.text.entry)
+        *(.text .text.*)
+        . = ALIGN(4K);
+        etext = .;
+  }
+
+  .data : {
+        sdata = .;
+        *(.data .data.*)
+        edata = .;
+  }
+
+  .bss : {
+        sbss = .;
+        *(.bss .bss.*)
+        ebss = .;
+  }
+
+  PROVIDE(end = .);
 }
