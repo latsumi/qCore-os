@@ -26,9 +26,15 @@
 obj/
 bin/
 build/
+target
+/kernel/kernel
+user/build/
+user/target/
+link_app.S
 
 # vscode
 .vscode/
+.DS_Store
 
 # extra
 !fw_jump.elf
