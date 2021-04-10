@@ -1,6 +1,6 @@
 import os
 
-TARGET_DIR = "../user/target"
+TARGET_DIR = "../user/target/"
 
 if __name__ == '__main__':
     f = open("link_app.S", mode="w")
@@ -36,7 +36,7 @@ _app_names:
     .global app_{0}_start
 app_{0}_start:
     .incbin "{1}"
-'''.format(idx, TARGET_DIR + "/" + app)
+'''.format(idx, TARGET_DIR + app)
         )
     f.write('app_{}_end:\n\n'.format(len(apps) - 1))
     f.close()

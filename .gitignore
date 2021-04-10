@@ -27,14 +27,16 @@ obj/
 bin/
 build/
 target
-/kernel/kernel
+user/asm/
 user/build/
 user/target/
+kernel/kernel
+kernel/kernel_app.ld
 link_app.S
 
 # vscode
 .vscode/
 .DS_Store
 
-# extra
-!fw_jump.elf
+*.asm
+*.sym

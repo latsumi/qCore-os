@@ -37,8 +37,8 @@ struct trapframe {
     /* 280 */ uint64 t6;
 };
 
-enum Exception {
-    InstructionMisaligned,
+enum {
+    InstructionMisaligned = 0,
     InstructionFault,
     IllegalInstruction,
     Breakpoint,
@@ -55,4 +55,12 @@ enum Exception {
     Unknown,
 };
 
-void usertrapret(struct trapframe* trapframe, uint64 kstack);
+enum Interrupt {
+    UserSoft = 0,
+    SupervisorSoft,
+    UserTimer = 4,
+    SupervisorTimer,
+    UserExternal = 8,
+    SupervisorExternal,
+};
+

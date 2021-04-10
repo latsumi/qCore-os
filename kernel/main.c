@@ -12,9 +12,11 @@ void clean_bss() {
 
 void main() {
     clean_bss();
-    printf("\n");
-    printf("hello world!\n");
     trapinit();
     batchinit();
-    run_next_app();
+    procinit();
+    timerinit();
+    run_all_app();
+    printf("start scheduler!\n");
+    scheduler();
 }

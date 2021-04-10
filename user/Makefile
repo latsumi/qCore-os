@@ -13,6 +13,7 @@ endif
 OBJCOPY := $(ARCH)-linux-musl-objcopy
 OBJDUMP := $(ARCH)-linux-musl-objdump
 CP := cp
+PY := python3
 
 elf:
 	@mkdir -p build
@@ -22,7 +23,7 @@ bin: elf
 	@mkdir -p asm
 	@$(CP) build/asm/* asm
 	@mkdir -p $(out_dir)
-	@$(CP) build/target/* target
+	@$(CP) build/bin/* target/
 
 clean:
 	@rm -rf build target asm
