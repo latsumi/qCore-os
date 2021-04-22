@@ -13,6 +13,8 @@ void clean_bss() {
 void main() {
     clean_bss();
     trapinit();
+    kinit();
+    kvminit();
     batchinit();
     procinit();
     timerinit();
