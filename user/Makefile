@@ -23,7 +23,7 @@ bin: elf
 	@mkdir -p asm
 	@$(CP) build/asm/* asm
 	@mkdir -p $(out_dir)
-	@$(CP) build/bin/* target/
+	@$(CP) build/target/* target
 
 clean:
 	@rm -rf build target asm
