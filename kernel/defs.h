@@ -13,7 +13,6 @@ void shutdown();
 void set_timer(uint64 stime);
 
 // console.c
-//void consoleinit();
 void consputc(int);
 
 // printf.c

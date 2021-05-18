@@ -1,6 +1,5 @@
 #include "defs.h"
 
-extern char ekernel[];
 extern char s_bss[];
 extern char e_bss[];
 
@@ -19,7 +18,6 @@ void main() {
     procinit();
     kvminit();
     batchinit();
-    //procinit();
     timerinit();
     run_all_app();
     info("start scheduler!\n");

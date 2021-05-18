@@ -52,7 +52,6 @@ enum {
     InstructionPageFault,
     LoadPageFault,
     StorePageFault,
-    Unknown,
 };
 
 enum Interrupt {

@@ -4,7 +4,7 @@
 #include "proc.h"
 
 uint64 sys_write(int fd, uint64 va, uint len) {
-    if (fd != 1)
+    if (fd != 0)
         return -1;
     struct proc *p = curr_proc();
     char str[200];

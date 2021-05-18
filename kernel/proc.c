@@ -121,7 +121,6 @@ void
 scheduler(void)
 {
     struct proc *p;
-
     for(;;){
         int all_done = 1;
         for(p = pool; p < &pool[NPROC]; p++) {

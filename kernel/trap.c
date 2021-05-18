@@ -6,10 +6,9 @@
 
 extern char trampoline[], uservec[], userret[];
 
-// set up to take exceptions and traps while in the kernel.
-void trapinit(void)
-{
-   set_kerneltrap();
+void trapinit() {
+    // intr_on(); // DO NOT enable interrupt unless you have handled kernel trap
+    set_kerneltrap();
 }
 
 void kerneltrap() {
