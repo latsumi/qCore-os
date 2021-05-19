@@ -3,6 +3,10 @@
 #define USTACK_SIZE (4096)
 #define TRAPFRAME_SIZE (4096)
 
+#include "file.h"
+
+#define FD_MAX (16)
+
 // Saved registers for kernel context switches.
 struct context {
     uint64 ra;
@@ -39,4 +43,6 @@ struct proc {
     uint64 sz;
     struct proc *parent;         // Parent process
     uint64 exit_code;
+
+    struct file* files[16];
 };
